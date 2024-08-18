@@ -1,0 +1,36 @@
+services:
+  wireguard:
+    image: lscr.io/linuxserver/wireguard
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=America/New_York
+      - LOG_CONFS=true
+    volumes:
+      - ./wg_confs/:/config/wg_confs/
+      # /home/corvi/repos/wg_confs/:/config/wg_confs/
+      - /lib/modules:/lib/modules/
+    ports:
+      - 8080:8080
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    network_mode: service:wireguard
+    volumes:
+      # /home/corvi/repos/qBittorrent.config:/config/qBittorrent/qBittorrent.conf
+      - ./qb-config/qBittorrent.config:/config/qbittorrent.conf
+      - /kyogre/downloads:/downloads:rw
+    environment:
+      - PUID=0
+      - PGID=0
+      - LOGS_TO_SDTOUT=true
+      - TZ=Europe/London
+      - WEBUI_PORT=8080
+    restart: unless-stopped

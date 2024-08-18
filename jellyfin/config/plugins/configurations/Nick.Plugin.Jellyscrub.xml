@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PluginConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <HwAcceleration>None</HwAcceleration>
+  <OnDemandGeneration>true</OnDemandGeneration>
+  <ExtractionDuringLibraryScan>true</ExtractionDuringLibraryScan>
+  <ScanBehavior>NonBlocking</ScanBehavior>
+  <ProcessPriority>BelowNormal</ProcessPriority>
+  <LocalMediaFolderSaving>false</LocalMediaFolderSaving>
+  <InjectClientScript>true</InjectClientScript>
+  <StyleTrickplayContainer>true</StyleTrickplayContainer>
+  <Interval>10000</Interval>
+  <WidthResolutions>
+    <int>320</int>
+  </WidthResolutions>
+  <ProcessThreads>-1</ProcessThreads>
+</PluginConfiguration>

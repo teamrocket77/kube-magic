@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PluginConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MaxParallelism>2</MaxParallelism>
+  <SelectedLibraries />
+  <AutoDetectIntros>false</AutoDetectIntros>
+  <AutoDetectCredits>false</AutoDetectCredits>
+  <AnalyzeSeasonZero>false</AnalyzeSeasonZero>
+  <CacheFingerprints>true</CacheFingerprints>
+  <UseChromaprint>true</UseChromaprint>
+  <EdlAction>None</EdlAction>
+  <RegenerateEdlFiles>false</RegenerateEdlFiles>
+  <AnalysisPercent>25</AnalysisPercent>
+  <AnalysisLengthLimit>10</AnalysisLengthLimit>
+  <MinimumIntroDuration>15</MinimumIntroDuration>
+  <MaximumIntroDuration>120</MaximumIntroDuration>
+  <MinimumCreditsDuration>15</MinimumCreditsDuration>
+  <MaximumCreditsDuration>300</MaximumCreditsDuration>
+  <BlackFrameMinimumPercentage>85</BlackFrameMinimumPercentage>
+  <ChapterAnalyzerIntroductionPattern>(^|\s)(Intro|Introduction|OP|Opening)(\s|$)</ChapterAnalyzerIntroductionPattern>
+  <ChapterAnalyzerEndCreditsPattern>(^|\s)(Credits?|ED|Ending)(\s|$)</ChapterAnalyzerEndCreditsPattern>
+  <SkipButtonVisible>true</SkipButtonVisible>
+  <AutoSkip>false</AutoSkip>
+  <AutoSkipCredits>false</AutoSkipCredits>
+  <ShowPromptAdjustment>5</ShowPromptAdjustment>
+  <HidePromptAdjustment>10</HidePromptAdjustment>
+  <SkipFirstEpisode>true</SkipFirstEpisode>
+  <PersistSkipButton>true</PersistSkipButton>
+  <SecondsOfIntroToPlay>2</SecondsOfIntroToPlay>
+  <MaximumFingerprintPointDifferences>6</MaximumFingerprintPointDifferences>
+  <MaximumTimeSkip>3.5</MaximumTimeSkip>
+  <InvertedIndexShift>2</InvertedIndexShift>
+  <SilenceDetectionMaximumNoise>-50</SilenceDetectionMaximumNoise>
+  <SilenceDetectionMinimumDuration>0.33</SilenceDetectionMinimumDuration>
+  <SkipButtonIntroText>Skip Intro</SkipButtonIntroText>
+  <SkipButtonEndCreditsText>Next</SkipButtonEndCreditsText>
+  <AutoSkipNotificationText>Intro skipped</AutoSkipNotificationText>
+  <AutoSkipCreditsNotificationText>Credits skipped</AutoSkipCreditsNotificationText>
+  <ProcessThreads>0</ProcessThreads>
+  <ProcessPriority>BelowNormal</ProcessPriority>
+</PluginConfiguration>
