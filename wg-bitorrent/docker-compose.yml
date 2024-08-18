@@ -16,6 +16,7 @@ services:
       - /lib/modules:/lib/modules/
     ports:
       - 8080:8080
+      - 9586:9586
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
@@ -25,7 +26,7 @@ services:
     network_mode: service:wireguard
     volumes:
       # /home/corvi/repos/qBittorrent.config:/config/qBittorrent/qBittorrent.conf
-      - ./qb-config/qBittorrent.config:/config/qbittorrent.conf
+      - ./qb-config/qBittorrent.config:/config/qBittorrent/qBittorrent.conf
       - /kyogre/downloads:/downloads:rw
     environment:
       - PUID=0
@@ -34,3 +35,10 @@ services:
       - TZ=Europe/London
       - WEBUI_PORT=8080
     restart: unless-stopped
+  metrics:
+    image: mindflavor/prometheus-wireguard-exporter
+    container_name: metrics_exporter
+    network_mode: service:wireguard
+    command: -a true
+    cap_add:
+      - NET_ADMIN
