@@ -42,3 +42,12 @@ services:
     command: -a true
     cap_add:
       - NET_ADMIN
+  prometheus:
+    image: prom/prometheus
+    container_name: prom
+    volumes:
+      - ./prom-conf/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    extra_hosts:
+      - host.docker.internal=host-gateway
