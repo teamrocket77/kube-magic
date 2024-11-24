@@ -16,16 +16,17 @@ services:
       - /lib/modules:/lib/modules/
     ports:
       - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
       - 9586:9586
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent
+    image: lscr.io/linuxserver/qbittorrent@sha256:618a145b5792f200da3c3eb556e7234e74c8f83c8486425419645452efd26f25
     container_name: qbittorrent
     network_mode: service:wireguard
     volumes:
-      # /home/corvi/repos/qBittorrent.config:/config/qBittorrent/qBittorrent.conf
       - ./qb-config/qBittorrent.config:/config/qBittorrent/qBittorrent.conf
       - /kyogre/downloads:/downloads:rw
     environment:
@@ -34,20 +35,5 @@ services:
       - LOGS_TO_SDTOUT=true
       - TZ=Europe/London
       - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
     restart: unless-stopped
-  metrics:
-    image: mindflavor/prometheus-wireguard-exporter
-    container_name: metrics_exporter
-    network_mode: service:wireguard
-    command: -a true
-    cap_add:
-      - NET_ADMIN
-  prometheus:
-    image: prom/prometheus
-    container_name: prom
-    volumes:
-      - ./prom-conf/prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - 9090:9090
-    extra_hosts:
-      - host.docker.internal=host-gateway

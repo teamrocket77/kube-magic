@@ -1,16 +1,16 @@
 {
   "category": "General",
-  "changelog": "- See the full changelog at [GitHub](https://github.com/jumoog/intro-skipper/blob/master/CHANGELOG.md)\n",
+  "changelog": "- See the full changelog at [GitHub](https://github.com/intro-skipper/intro-skipper/releases/tag/10.9/v1.0.0.2)\n",
   "description": "",
   "guid": "c83d86bb-a1e0-4c35-a113-e2101cf4ee6b",
   "name": "Intro Skipper",
   "overview": "Automatically detect and skip intros in television episodes",
   "owner": "AbandonedCart, rlauuzo, jumoog (forked from ConfusedPolarBear)",
-  "targetAbi": "10.9.7.0",
-  "timestamp": "2024-07-15T10:29:00.0000000Z",
-  "version": "0.2.0.12",
+  "targetAbi": "10.9.11.0",
+  "timestamp": "2024-09-29T19:49:54.0000000Z",
+  "version": "1.0.0.2",
   "status": "Superceded",
   "autoUpdate": true,
-  "imagePath": "/config/plugins/Intro Skipper_0.2.0.12/logo.png",
+  "imagePath": "/config/plugins/Intro Skipper_1.0.0.2/logo.png",
   "assemblies": []
 }
